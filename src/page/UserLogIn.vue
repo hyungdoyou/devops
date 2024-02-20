@@ -93,7 +93,7 @@
             <div class="join-opt">
               <div class="btn-wrap">
                 <a
-                  href="https://www.lonuashop.kro.kr/api/oauth2/authorization/kakao"
+                  href="http://54.180.155.43:8888/api/oauth2/authorization/kakao"
                   class="btn sns-login ty-kakao"
                 >
                   <span>카카오로 시작하기</span>
