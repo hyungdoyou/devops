@@ -13,6 +13,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "v20.8.1"
+
       - name: Install dependencies
         run: npm install
 
@@ -21,7 +26,6 @@ jobs:
 
       - name: Docker Build and Push
         run: |
-          cd devops
           sudo docker build --tag hyungdoyou/fe:latest .
           sudo docker login -u ${{ secrets.DOCKER_EMAIL }} -p ${{ secrets.DOCKER_PASSWORD }}
           sudo docker push hyungdoyou/fe:latest
@@ -34,6 +38,5 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.REMOTE_PORT }}
           script: |
-            cd devops
             docker-compose -f /home/ubuntu/devops.yml pull
             docker-compose -f /home/ubuntu/devops.yml up --force-recreate
