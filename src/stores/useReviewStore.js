@@ -1,8 +1,8 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
-const backend = "http://15.164.94.238:8888/api";
-// const backend = "http://15.164.94.238:8888/api";
+const backend = "http://43.201.66.101:8888/api";
+// const backend = "http://43.201.66.101:8888/api";
 const storedToken = sessionStorage.getItem("token");
 
 export const useReviewStore = defineStore("review", {
@@ -53,7 +53,7 @@ export const useReviewStore = defineStore("review", {
         );
         formData.append("reviewPhoto", reviewPhoto);
         let response = await axios.post(
-            "http://15.164.94.238:8888/api/review/register",
+            "http://43.201.66.101:8888/api/review/register",
             formData,
             {
               headers: {
