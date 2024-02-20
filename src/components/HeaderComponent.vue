@@ -29,7 +29,7 @@
         <li v-show="!isLogin()">
           <a href="/UserSignUp">
             <i class="fa-solid fa-user-plus"></i>
-            <strong>회원가입</strong>
+            <strong>join</strong>
           </a>
         </li>
         <li v-show="isLogin()">
