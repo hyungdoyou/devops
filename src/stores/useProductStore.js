@@ -2,8 +2,8 @@ import { defineStore } from "pinia";
 import axios from "axios";
 
 
-const backend = 'http://54.180.155.43:8888/api';
-// const backend = "http://54.180.155.43:8888/api";
+const backend = 'http://13.209.41.70:80/api';
+// const backend = "http://13.209.41.70:80/api";
 export const useProductStore = defineStore("product", {
   state: () => ({ idx:0 , product:"", isLoading: true}),
   actions: {
