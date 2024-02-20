@@ -36,8 +36,8 @@ export default {
     },
     methods: {
         async getProductPage(page, size) {
-            const backend = 'http://13.209.41.70:80/api';
-            // let backend = "http://13.209.41.70:80/api";
+            const backend = 'http://13.209.41.70:8888/api';
+            // let backend = "http://13.209.41.70:8888/api";
             await axios.get(backend + "/product/stylelist/" + this.$route.params.StyleIdx + "/" + page + "/" + size).then((res) => {
                 console.log(this.$route.params.SategoryIdx);
                 console.log(res);

@@ -56,8 +56,8 @@ export default {
   },
   methods: {
       async getProductPage(page, size) {
-          const backend = 'http://13.209.41.70:80/api';
-          // let backend = "http://13.209.41.70:80/api";
+          const backend = 'http://13.209.41.70:8888/api';
+          // let backend = "http://13.209.41.70:8888/api";
           await axios.get(backend + "/product/brand/"+this.$route.params.idx+"/" + page + "/" + size).then((res) => {
               //console.log(res);
               this.productPage = res.data.result;
@@ -69,8 +69,8 @@ export default {
       },
 
       async getBrandDetail(idx) {
-          const backend = 'http://13.209.41.70:80/api';
-          // let backend = "http://13.209.41.70:80/api";
+          const backend = 'http://13.209.41.70:8888/api';
+          // let backend = "http://13.209.41.70:8888/api";
           await axios.get(backend + "/brand/"+idx).then((res) => {
               //console.log(res);
               this.brand = res.data.result;
