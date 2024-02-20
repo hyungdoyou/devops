@@ -15,9 +15,7 @@
   </div>
   <header class>
     <div class="global_search">
-      <h1
-        class="symbol"
-      >
+      <h1 class="symbol">
         <a href="/">
           <img
             src="https://github.com/hyungdoyou/LONUA_Project/assets/148875644/0a6a9978-2b0d-499f-85a3-4da69d548aff"
@@ -29,7 +27,7 @@
         <li v-show="!isLogin()">
           <a href="/UserSignUp">
             <i class="fa-solid fa-user-plus"></i>
-            <strong>join</strong>
+            <strong>join2</strong>
           </a>
         </li>
         <li v-show="isLogin()">
@@ -107,9 +105,11 @@
                           :key="idx"
                           class="dropdown-menu-list-item"
                         >
-                        <a class="dropdown-menu-list-item-link" :href="'/product/category/'+idx">{{
-                            category.categoryName
-                          }}</a>
+                          <a
+                            class="dropdown-menu-list-item-link"
+                            :href="'/product/category/' + idx"
+                            >{{ category.categoryName }}</a
+                          >
                         </li>
                       </ul>
                     </div>
@@ -127,9 +127,11 @@
                           :key="idx"
                           class="dropdown-menu-list-item"
                         >
-                        <a class="dropdown-menu-list-item-link" :href="'/product/style/'+idx">{{
-                            style.styleName
-                          }}</a>
+                          <a
+                            class="dropdown-menu-list-item-link"
+                            :href="'/product/style/' + idx"
+                            >{{ style.styleName }}</a
+                          >
                         </li>
                       </ul>
                     </div>
@@ -172,10 +174,10 @@ export default {
   computed: {
     ...mapStores(useBrandStore),
   },
-  mounted(){
-      this.brandStore.getBrnadPage(1,30);
-      this.brands = this.brandStore.brandPage;
-    },
+  mounted() {
+    this.brandStore.getBrnadPage(1, 30);
+    this.brands = this.brandStore.brandPage;
+  },
   data() {
     return {
       // TODO DB에서든 어디서든 추가
