@@ -20,7 +20,7 @@ jobs:
         run: npm run build
 
       - name: Docker Build and Push
-        script: |
+        run: |
           cd devops
           sudo docker build --tag hyungdoyou/fe:latest .
           sudo docker login -u ${{ secrets.DOCKER_EMAIL }} -p ${{ secrets.DOCKER_PASSWORD }}
