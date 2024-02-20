@@ -38,5 +38,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.REMOTE_PORT }}
           script: |
-            sudo docker-compose -f /home/ubuntu/devops.yml pull
-            sudo docker-compose -f /home/ubuntu/devops.yml up --force-recreate
+            sudo docker-compose -f /home/ubuntu/devops.yml pull && sudo docker-compose -f /home/ubuntu/devops.yml up --force-recreate
