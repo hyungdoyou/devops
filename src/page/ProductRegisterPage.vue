@@ -176,8 +176,8 @@ export default {
   },
   methods: {
     async sendData() {
-      const backend = 'http://13.209.41.70:8888/api';
-      // const backend = "http://13.209.41.70:8888/api";
+      const backend = 'http://15.164.94.238:8888/api';
+      // const backend = "http://15.164.94.238:8888/api";
       const productNameElement = document.getElementById("productName");
       const productName = productNameElement ? productNameElement.value : 0;
 
