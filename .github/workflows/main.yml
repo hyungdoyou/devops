@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
 
+permissions: write-all
+
 jobs:
   deploy:
     name: frontend test
@@ -23,6 +25,11 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: result
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        with:
+          files: "test-results/*.xml"
 
       - name: Docker Build and Push
         run: |
