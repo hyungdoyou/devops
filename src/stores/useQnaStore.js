@@ -1,8 +1,8 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
-const backend = 'http://43.201.66.101:8888/api';
-// const backend = "http://43.201.66.101:8888/api";
+const backend = "http://3.34.99.3:8888/api";
+// const backend = "http://3.34.99.3:8888/api";
 const storedToken = sessionStorage.getItem("token");
 
 export const useQnaStore = defineStore("qna", {
@@ -30,7 +30,7 @@ export const useQnaStore = defineStore("qna", {
         const response = await axios.get(
           backend + "/question/productQnA/list/" + idx + "/1/50"
         );
-        
+
         this.productQnas = response.data.result;
       } catch (error) {
         console.error("에러 발생:", error);
@@ -42,16 +42,16 @@ export const useQnaStore = defineStore("qna", {
       let postRegisterQuestionReq = JSON.stringify(data);
       try {
         await axios.post(
-          backend + "/question/register", postRegisterQuestionReq,
+          backend + "/question/register",
+          postRegisterQuestionReq,
           {
             headers: {
               "Content-Type": "application/json",
-              'Authorization': "Bearer " + token,
+              Authorization: "Bearer " + token,
             },
           }
         );
         window.location.reload();
-        
       } catch (error) {
         console.error("에러 발생:", error);
         // 에러 처리 로직 추가

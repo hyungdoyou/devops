@@ -1,8 +1,8 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
-const backend = 'http://43.201.66.101:8888/api';
-// const backend = "http://43.201.66.101:8888/api";
+const backend = "http://3.34.99.3:8888/api";
+// const backend = "http://3.34.99.3:8888/api";
 // const storedToken = sessionStorage.getItem("token");
 export const useBrandStore = defineStore("brand", {
   state: () => ({ isLoading: false, brandPage: [] }),
