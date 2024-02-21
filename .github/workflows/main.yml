@@ -1,8 +1,8 @@
 # name: frontend devops
 
-on:
-  push:
-    branches: [main]
+# on:
+#   push:
+#     branches: [main]
 
 # permissions: write-all
 
@@ -11,39 +11,39 @@ on:
 #     name: frontend test
 #     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v3
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "v20.8.1"
+#       - name: Install Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: "v20.8.1"
 
-      - name: Install dependencies
-        run: npm install
+#       - name: Install dependencies
+#         run: npm install
 
-      - name: Build
-        run: npm run build
+#       - name: Build
+#         run: npm run build
 
-      - name: result
-        uses: EnricoMi/publish-unit-test-result-action@v1
-        with:
-          files: "test-results/*.xml"
+#       - name: result
+#         uses: EnricoMi/publish-unit-test-result-action@v1
+#         with:
+#           files: "test-results/*.xml"
 
-      - name: Docker Build and Push
-        run: |
-          sudo docker build --tag hyungdoyou/fe:latest .
-          sudo docker login -u ${{ secrets.DOCKER_EMAIL }} -p ${{ secrets.DOCKER_PASSWORD }}
-          sudo docker push hyungdoyou/fe:latest
+#       - name: Docker Build and Push
+#         run: |
+#           sudo docker build --tag hyungdoyou/fe:latest .
+#           sudo docker login -u ${{ secrets.DOCKER_EMAIL }} -p ${{ secrets.DOCKER_PASSWORD }}
+#           sudo docker push hyungdoyou/fe:latest
 
-      - name: Deploy Docker Compose
-        uses: appleboy/ssh-action@v0.1.3
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.REMOTE_PORT }}
-          script: |
-            sudo docker-compose -f /home/ubuntu/devops.yml pull
-            sudo docker-compose -f /home/ubuntu/devops.yml up --force-recreate
+#       - name: Deploy Docker Compose
+#         uses: appleboy/ssh-action@v0.1.3
+#         with:
+#           host: ${{ secrets.REMOTE_HOST }}
+#           username: ${{ secrets.REMOTE_USER }}
+#           key: ${{ secrets.SSH_KEY }}
+#           port: ${{ secrets.REMOTE_PORT }}
+#           script: |
+#             sudo docker-compose -f /home/ubuntu/devops.yml pull
+#             sudo docker-compose -f /home/ubuntu/devops.yml up --force-recreate
