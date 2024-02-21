@@ -5,17 +5,27 @@
     </div>
 
     <div class="men-category-title-image-container">
-      <div class="title-image" style="
+      <div
+        class="title-image"
+        style="
           background-image: url('https://wimage.wconcept.co.kr/msa/display/20230904105951146_5001.jpg?RS=600');
-        ">
-        <span>WEDNESDAY OASIS <br />
-          24SS COLLECTION</span>
+        "
+      >
+        <span
+          >WEDNESDAY OASIS <br />
+          24SS COLLECTION</span
+        >
       </div>
-      <div class="title-image" style="
+      <div
+        class="title-image"
+        style="
           background-image: url('https://wimage.wconcept.co.kr/msa/display/20230904105627543_2741.jpg?RS=600');
-        ">
-        <span>Millo Archive <br />
-          24SS COLLECTION</span>
+        "
+      >
+        <span
+          >Millo Archive <br />
+          24SS COLLECTION</span
+        >
       </div>
     </div>
 
@@ -23,35 +33,46 @@
       <span>TRENDING NOW</span>
     </div>
 
-    <div v-if="width <1200" class="splide_contoner">
+    <div v-if="width < 1200" class="splide_contoner">
       <!-- trending-now product -->
-      <Splide :options="{
-        type: 'loop',
-        // width: &quot;auto&quot;,
-        pagination: false,
-        // gap: &quot;20px&quot;,
-        perPage: 3,
-      }" aria-label="My Favorite Images">
+      <Splide
+        :options="{
+          type: 'loop',
+          // width: &quot;auto&quot;,
+          pagination: false,
+          // gap: &quot;20px&quot;,
+          perPage: 3,
+        }"
+        aria-label="My Favorite Images"
+      >
         <SplideSlide v-for="res in products" :key="res.productIdx">
-          <ProductCardComponent v-bind:Product="res" v-bind:like="likesStore.indexList.includes(res.productIdx)" />
+          <ProductCardComponent
+            v-bind:Product="res"
+            v-bind:like="likesStore.indexList.includes(res.productIdx)"
+          />
         </SplideSlide>
       </Splide>
     </div>
     <div v-else class="splide_contoner">
       <!-- trending-now product -->
-      <Splide :options="{
-        type: 'loop',
-        // width: &quot;auto&quot;,
-        pagination: false,
-        // gap: &quot;20px&quot;,
-        perPage: 5,
-      }" aria-label="My Favorite Images">
+      <Splide
+        :options="{
+          type: 'loop',
+          // width: &quot;auto&quot;,
+          pagination: false,
+          // gap: &quot;20px&quot;,
+          perPage: 5,
+        }"
+        aria-label="My Favorite Images"
+      >
         <SplideSlide v-for="res in products" :key="res.productIdx">
-          <ProductCardComponent v-bind:Product="res" v-bind:like="likesStore.indexList.includes(res.productIdx)" />
+          <ProductCardComponent
+            v-bind:Product="res"
+            v-bind:like="likesStore.indexList.includes(res.productIdx)"
+          />
         </SplideSlide>
       </Splide>
     </div>
-
   </div>
 </template>
 
@@ -137,8 +158,8 @@ export default {
     async getProductPage(page, size) {
       await axios
         .get(
-          "http://43.201.66.101:8888/api/product/list/" + page + "/" + size,
-          // "http://43.201.66.101:8888/api/product/list/" + page + "/" + size
+          "http://3.34.99.3:8888/api/product/list/" + page + "/" + size
+          // "http://3.34.99.3:8888/api/product/list/" + page + "/" + size
         )
         .then((res) => {
           console.log("getProductPage 성공!");
@@ -155,7 +176,7 @@ export default {
   mounted() {
     this.likesStore.getMainLikeList();
     this.getProductPage(1, 15);
-    window.addEventListener('resize', this.handleResize);
+    window.addEventListener("resize", this.handleResize);
   },
   computed: {
     // 배열을 전달하지 않고, 스토어를 하나씩 전달합니다.
@@ -192,7 +213,7 @@ button {
   position: absolute;
 }
 
-.dropdown-trigger:hover>.category-nav-list-menu-dropdown {
+.dropdown-trigger:hover > .category-nav-list-menu-dropdown {
   display: flex;
   flex-direction: column;
   list-style-type: none;
@@ -211,7 +232,7 @@ button {
   font-size: 44px;
 }
 
-.category-title>h2 {
+.category-title > h2 {
   text-align: center;
   font-weight: 100;
 }
@@ -234,7 +255,7 @@ button {
   text-align: center;
 }
 
-.title-image>span {
+.title-image > span {
   position: relative;
   top: 50%;
   color: white;
@@ -366,7 +387,8 @@ button {
   flex-direction: row;
 }
 
-.products-grid-item-info-brand {}
+.products-grid-item-info-brand {
+}
 
 .products-grid-item-info-name {
   text-align: left;

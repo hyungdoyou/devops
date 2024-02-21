@@ -1,12 +1,17 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
-const backend = "http://43.201.66.101:8888/api";
-// const backend = "http://43.201.66.101:8888/api";
+const backend = "http://3.34.99.3:8888/api";
+// const backend = "http://3.34.99.3:8888/api";
 const storedToken = sessionStorage.getItem("token");
 
 export const useReviewStore = defineStore("review", {
-  state: () => ({ reviews: [], productIdx: 0, isReviewExist: true, isSuccess: false }),
+  state: () => ({
+    reviews: [],
+    productIdx: 0,
+    isReviewExist: true,
+    isSuccess: false,
+  }),
   actions: {
     async getReviewList() {
       try {
@@ -39,8 +44,8 @@ export const useReviewStore = defineStore("review", {
       }
     },
     async submitReview(review, reviewPhoto) {
-      try{
-      let formData = new FormData();
+      try {
+        let formData = new FormData();
         let data = {
           productIdx: this.productIdx, //2
           reviewContent: review.reviewContent,
@@ -53,16 +58,16 @@ export const useReviewStore = defineStore("review", {
         );
         formData.append("reviewPhoto", reviewPhoto);
         let response = await axios.post(
-            "http://43.201.66.101:8888/api/review/register",
-            formData,
-            {
-              headers: {
-                Authorization: `Bearer ${storedToken}`,
-                "Content-Type": "multipart/form-data",
-              },
-            }
-          );
-        if(response.data.isSuccess === true){
+          "http://3.34.99.3:8888/api/review/register",
+          formData,
+          {
+            headers: {
+              Authorization: `Bearer ${storedToken}`,
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+        if (response.data.isSuccess === true) {
           alert("리뷰작성이 완료됐습니다.");
           window.location.href = "/UserReview";
         }
