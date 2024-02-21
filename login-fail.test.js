@@ -33,12 +33,13 @@ describe("로그인", () => {
             // alert 창 뜨는 것 처리
             await driver.wait(until.alertIsPresent());
 
+            // 현재 브라우저의 alert 창을 찾아냄, 없으면 NoAlertPresentException 예외가 발생
             let alert = await driver.switchTo().alert();
 
-            // alert 창의 메시지 뽑아냄
+            // alert 창의 메시지를 가져옴
             let alertText = await alert.getText();
 
-            // 수락 버튼
+            // alert 창 수락 버튼
             await alert.accept();
         
             expect(alertText).toContain('이메일과 비밀번호가 일치하지 않습니다.');   
