@@ -60,8 +60,8 @@ export default {
   },
   methods: {
     async getProductPage(page, size) {
-      const backend = "http://3.34.99.3:8888/api";
-      // let backend = "http://3.34.99.3:8888/api";
+      const backend = "http://77.77.77.51:80/api";
+      // let backend = "http://77.77.77.51:80/api";
       await axios
         .get(
           backend +
@@ -82,8 +82,8 @@ export default {
     },
 
     async getBrandDetail(idx) {
-      const backend = "http://3.34.99.3:8888/api";
-      // let backend = "http://3.34.99.3:8888/api";
+      const backend = "http://77.77.77.51:80/api";
+      // let backend = "http://77.77.77.51:80/api";
       await axios
         .get(backend + "/brand/" + idx)
         .then((res) => {

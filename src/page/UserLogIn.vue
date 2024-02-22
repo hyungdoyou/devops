@@ -93,7 +93,7 @@
             <div class="join-opt">
               <div class="btn-wrap">
                 <a
-                  href="http://3.34.99.3:8888/api/oauth2/authorization/kakao"
+                  href="http://77.77.77.51:80/api/oauth2/authorization/kakao"
                   class="btn sns-login ty-kakao"
                 >
                   <span>카카오로 시작하기</span>

@@ -158,8 +158,8 @@ export default {
     async getProductPage(page, size) {
       await axios
         .get(
-          "http://3.34.99.3:8888/api/product/list/" + page + "/" + size
-          // "http://3.34.99.3:8888/api/product/list/" + page + "/" + size
+          "http://77.77.77.51:80/api/product/list/" + page + "/" + size
+          // "http://77.77.77.51:80/api/product/list/" + page + "/" + size
         )
         .then((res) => {
           console.log("getProductPage 성공!");

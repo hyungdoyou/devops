@@ -118,8 +118,8 @@ export default {
   methods: {
     async getBrnadAll() {
       this.isLoading = true;
-      const backend = "http://3.34.99.3:8888/api";
-      //   let backend = "http://3.34.99.3:8888/api";
+      const backend = "http://77.77.77.51:80/api";
+      //   let backend = "http://77.77.77.51:80/api";
       await axios
         .get(backend + "/brand/listall")
         .then((res) => {
@@ -134,8 +134,8 @@ export default {
     },
 
     async getBrnadPage(page, size) {
-      const backend = "http://3.34.99.3:8888/api";
-      //   let backend = "http://3.34.99.3:8888/api";
+      const backend = "http://77.77.77.51:80/api";
+      //   let backend = "http://77.77.77.51:80/api";
       await axios
         .get(backend + "/brand/list/" + page + "/" + size)
         .then((res) => {
@@ -151,13 +151,13 @@ export default {
       console.log(brandIdx);
       await axios
         .get(
-          "http://3.34.99.3:8888/api/product/brand/" +
+          "http://77.77.77.51:80/api/product/brand/" +
             brandIdx +
             "/" +
             page +
             "/" +
             size
-          // "http://3.34.99.3:8888/api/product/brand/" + brandIdx + "/" + page + "/" + size,
+          // "http://77.77.77.51:80/api/product/brand/" + brandIdx + "/" + page + "/" + size,
         )
         .then((res) => {
           console.log("getProductPageByBrandIdx 성공!");
