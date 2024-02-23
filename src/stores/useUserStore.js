@@ -1,8 +1,8 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
-const backend = "http://77.77.77.51:80/api";
-// const backend = "http://77.77.77.51:80/api";
+const backend = "http://192.168.0.151:80/api";
+// const backend = "http://192.168.0.151:80/api";
 const storedToken = sessionStorage.getItem("token");
 
 export const useUserStore = defineStore("user", {
@@ -59,7 +59,7 @@ export const useUserStore = defineStore("user", {
     // 카카오 로그인
     sendKakao() {
       window.Kakao.Auth.authorize({
-        redirectUri: "http://77.77.77.51:80/KakaoLogIn",
+        redirectUri: "http://192.168.0.151:80/KakaoLogIn",
         // redirectUri: "http://localhost:8081/KakaoLogIn",
       });
     },
