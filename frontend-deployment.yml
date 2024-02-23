@@ -20,10 +20,10 @@ spec:
         image: hyungdoyou/fe:3.VERSION
         resources:
           requests:
-            memory: "2Gi"
-            cpu: "1000m"
+            memory: "512m"
+            cpu: "100m"
           limits:
-            memory: "4Gi"
+            memory: "3Gi"
             cpu: "2000m"
         readinessProbe:
           httpGet:
