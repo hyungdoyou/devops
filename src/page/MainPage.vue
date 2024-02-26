@@ -1,7 +1,7 @@
 <template>
   <div id="main-content" class="main-content">
     <div class="category-title">
-      <h2>Promotion222</h2>
+      <h2>Promotion</h2>
     </div>
 
     <div class="men-category-title-image-container">
