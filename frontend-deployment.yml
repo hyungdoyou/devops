@@ -27,8 +27,14 @@ spec:
             cpu: "2000m"
         readinessProbe:
           httpGet:
-            path: /
+            path: /api
             port: 80
-          initialDelaySeconds: 5
-          periodSeconds: 2
-          successThreshold: 3    
+          initialDelaySeconds: 20
+          periodSeconds: 10
+          successThreshold: 3
+        livenessProbe:
+          httpGet:
+            path: /api
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 10
